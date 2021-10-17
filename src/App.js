@@ -3,13 +3,23 @@ import './App.css';
 import { useEffect, useState } from 'react';
 import TaskEntry from './TaskEntry';
 import Activities from './Activities';
+import Graph from './graph';
 
 function App() {
 
-  const [taskList, setTaskList] = useState([])
+  const data = [{task:'Evaluatiing Request w/o registered letter',time:22},
+   {task:'Evaluatiing Request w/ registered letter', time:16}, 
+   {task:'Network sdervice closure', time:17}, 
+   {task:'Authorization requested', time:21}, 
+   {task:'BO Service Closure', time:55}, 
+   {task:'Pending request for reservation closure', time:1},
+   {task:'Pending liqudation request', time:24},
+   {task:'Back office adjustment request', time:19}]
+
+  const [taskList, setTaskList] = useState(data)
 
   const task = (task, hour) => {
-    console.log("clicked", task, hour)
+    // console.log("clicked", task, hour)
     const entry = {task: task, time: hour};
     setTaskList(taskList => [...taskList, entry])
     // setTaskList.push(entry)
@@ -23,9 +33,10 @@ useEffect(() => {
 
   return (
     <div className="App">
-      
+      <h1> Process Mining </h1>
       <TaskEntry task = {task}/>
       <Activities list = {taskList}/>
+      <Graph list = {taskList}/>
  
     </div>
   );
