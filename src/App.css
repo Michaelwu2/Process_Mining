@@ -2,12 +2,12 @@
   text-align: center;
   display:grid;
   grid-template-columns: 10% 40% 40% 10%;
-  grid-template-rows: 100px 300px 300px 300px;
+  grid-template-rows: 100px 100px auto 300px;
   grid-template-areas: 
   "header header header header"
   "sideL task task sideR"
   " side2L activities activities Side2R"
-  "graph graph graph graph";
+  "side3L graph graph Side3R";
   column-gap: 10px;
   row-gap: 20px;
   
@@ -46,4 +46,17 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+h1 {
+text-align: left;
+margin-left: 40px;
+padding: 20px;
+color: white;
+/* background-color: rgb(41, 141, 172); */
+align-self: center;
+grid-area: header;
+}
+body {
+  background-color: black;
 }
