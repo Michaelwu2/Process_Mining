@@ -6,6 +6,11 @@ import './graph.css';
 
 function graph({list}) {
 
+  function argMax(array) {
+    return array.map((x, i) => [x, i]).reduce((r, a) => (a[0] > r[0] ? a : r))[1];
+  }
+
+ 
 let taskName = [];
 let hours = [];
 
@@ -14,12 +19,14 @@ list.map(list => {
     hours.push(list.time);
 }
 )
+let color = hours.map (x => 'rgba(75,192,192,1)',);
+color[argMax(hours)] = 'red';
 const state = {
     labels: taskName,
     datasets: [
       {
         label: 'Task/ Process',
-        backgroundColor: 'rgba(75,192,192,1)',
+        backgroundColor: color,
         borderColor: '#ffffff',
         borderWidth: 2,
         data: hours,
