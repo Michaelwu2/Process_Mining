@@ -14,11 +14,11 @@ function graph({list}) {
 let taskName = [];
 let hours = [];
 
-list.map(list => {
+list.forEach(list => {
     taskName.push(list.task);
     hours.push(list.time);
-}
-)
+})
+
 let color = hours.map (x => 'rgba(75,192,192,1)',);
 color[argMax(hours)] = 'red';
 const state = {

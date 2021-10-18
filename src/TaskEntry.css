@@ -34,3 +34,8 @@
     border-radius: 10px;
     align-self: center;
 }
+
+button[disabled=disabled], button:disabled {
+    background-color: grey;
+    cursor:not-allowed !important;
+}

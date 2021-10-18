@@ -7,9 +7,9 @@ import Graph from './graph';
 
 function App() {
 
-  const data = [{task:'Evaluatiing Request w/o registered letter',time:22},
-   {task:'Evaluatiing Request w/ registered letter', time:16}, 
-   {task:'Network sdervice closure', time:17}, 
+  const data = [{task:'Evaluating Request w/o registered letter',time:22},
+   {task:'Evaluating Request w/ registered letter', time:16}, 
+   {task:'Network service closure', time:17}, 
    {task:'Authorization requested', time:21}, 
    {task:'BO Service Closure', time:55}, 
    {task:'Pending request for reservation closure', time:1},
