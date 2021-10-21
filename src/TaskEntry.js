@@ -7,6 +7,8 @@ function TaskEntry ({task}) {
     const [taskInput, setTaskInput] = useState('');
     const [hourInput, setHourInput] = useState(0);
     const [disabled, setDisabled] = useState(true);
+    const [disabledRate, setDisabledRate] = useState(true);
+    const [ratingInput, setRatingInput] = useState(0);
 
     return (
         <div className="TaskEntry">
@@ -21,11 +23,20 @@ function TaskEntry ({task}) {
                     setHourInput(Number(e.target.value));
                 }
             }} 
+            />   <label id="enterRating" for="rating"> Enter Difficulty (Easy 1-10 Hard): </label>
+            <input name="ratingEntry" type="text" id="ratingEntry" onChange = {e => {
+                if(isNaN(Number(e.target.value))) {
+                    setDisabledRate(true);
+                } else {
+                    setDisabledRate(false);
+                    setRatingInput(Number(e.target.value));
+                }
+            }} 
             /> 
-            
-            <button className='submitButton' disabled = {disabled} onClick={() => {
-                task(taskInput,hourInput);
+            <button className='submitButton' disabled = {disabled && disabledRate} onClick={() => {
+                task(taskInput,hourInput,ratingInput);
                 setDisabled(true);
+                setDisabledRate(true);
             }}>Submit</button>
         </div>
     )

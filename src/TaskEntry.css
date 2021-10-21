@@ -9,7 +9,7 @@
     place-self: center stretch;
 }
 
-#enterTask, #enterTime {
+#enterTask, #enterTime, #enterRating {
     font-size: 25px;
     /* align-self: center; */
     display:inline-block;
@@ -17,8 +17,15 @@
 
 }
 
-#taskEntry , #hourEntry{
-    width: 20%;
+#hourEntry , #ratingEntry {
+    width: 5%;
+    height:10%;
+    margin: 10px;
+    padding: 10px
+}
+
+#taskEntry {
+    width: 15%;
     height:10%;
     margin: 10px;
     padding: 10px
