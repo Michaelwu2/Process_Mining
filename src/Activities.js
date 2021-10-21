@@ -11,12 +11,14 @@ function Activities({list}) {
                 <tr>
                     <th>Task</th>
                     <th>Time</th>
+                    <th>Difficulty</th>
                 </tr>
                     {list.map((list) => {
                         return (
                             <tr>
                                 <td>{list.task}</td>
                                 <td>{list.time}</td>
+                                <td>{list.rating}</td>
                             </tr>
                         );
                     })}
